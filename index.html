@@ -3,61 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo do Basquete</title>
+    <title>Original Sports - Encontre sua Quadra</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
 </head>
-<body>
+<body class="dark-mode">
     <header>
-        <nav>
-            <ul id="navbar">
-                <li><a href="#home" class="nav-link active">Início</a></li>
-                <li><a href="#historia" class="nav-link">História</a></li>
-                <li><a href="#regras" class="nav-link">Regras</a></li>
-                <li><a href="#jogadores" class="nav-link">Jogadores</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="logo">Original Sports</div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar quadras, esportes...">
+            </div>
+            <div class="profile">
+                <div class="avatar">
+                    <img src="https://i.pravatar.cc/150?u=originalsports" alt="Perfil">
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="content-section">
-            <div class="container">
-                <h1>Bem-vindo ao Mundo do Basquete</h1>
-                <p>O basquetebol é um dos esportes mais populares e dinâmicos do mundo. Explore nosso site para aprender mais sobre sua história, regras e grandes ídolos.</p>
-            </div>
-        </section>
+    <div class="filter-dashboard">
+        <div class="chips-container">
+            <button class="chip active" data-filter="all">Todas</button>
+            <button class="chip" data-filter="basquete">🏀 Basquete</button>
+            <button class="chip" data-filter="futebol">⚽ Futebol</button>
+            <button class="chip" data-filter="volei">🏐 Vôlei</button>
+            <button class="chip" data-filter="proximas">📍 Próximas</button>
+            <button class="chip" data-filter="avaliadas">⭐ Melhor Avaliadas</button>
+        </div>
+    </div>
 
-        <section id="historia" class="content-section">
-            <div class="container">
-                <h2>História do Basquete</h2>
-                <p>O basquete foi inventado em 1891 por James Naismith, um professor de educação física canadense, em Springfield, Massachusetts, EUA. Ele buscava um esporte que pudesse ser praticado em locais fechados durante o rigoroso inverno da região.</p>
-                <p>No Brasil, o esporte chegou em 1896, trazido por Augusto Shaw. Desde então, o país se tornou uma potência mundial, com títulos mundiais masculinos e femininos.</p>
-            </div>
-        </section>
-
-        <section id="regras" class="content-section">
-            <div class="container">
-                <h2>Regras Básicas</h2>
-                <ul>
-                    <li><strong>Equipes:</strong> 5 jogadores em quadra por time.</li>
-                    <li><strong>Duração:</strong> 4 quartos de 10 minutos (FIBA) ou 12 minutos (NBA).</li>
-                    <li><strong>Pontuação:</strong> Arremessos valem 1, 2 ou 3 pontos.</li>
-                    <li><strong>Drible:</strong> O jogador deve bater a bola no chão para se deslocar.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="jogadores" class="content-section">
-            <div class="container">
-                <h2>Grandes Jogadores</h2>
-                <p>O basquete revelou lendas como Michael Jordan, LeBron James e Kobe Bryant na NBA. No Brasil, destacam-se nomes como Oscar Schmidt (maior pontuador da história), Hortência e Magic Paula.</p>
-            </div>
-        </section>
+    <main id="court-grid" class="court-grid">
+        <!-- Skeleton screens will be here initially -->
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
     </main>
+
+    <button id="fab" class="fab">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <!-- Modal de Detalhes -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content glass">
+            <button class="close-modal">&times;</button>
+            <div class="modal-body">
+                <div class="gallery">
+                    <img id="modal-img" src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800" alt="Quadra">
+                </div>
+                <div class="details-info">
+                    <h2 id="modal-title">Arena Central</h2>
+                    <p id="modal-address">Rua dos Esportes, 123</p>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary"><i class="fas fa-map-marker-alt"></i> Como Chegar</button>
+                        <button class="btn btn-secondary"><i class="fas fa-camera"></i> Adicionar Foto</button>
+                    </div>
+                    <div class="comments-section">
+                        <h3>Comentários</h3>
+                        <div class="chat-style">
+                            <div class="comment"><strong>João:</strong> Quadra excelente!</div>
+                            <div class="comment"><strong>Maria:</strong> Muito bem iluminada.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulário Quick Add -->
+    <div id="quick-add-modal" class="modal-overlay">
+        <div class="modal-content glass small-modal">
+            <button class="close-modal">&times;</button>
+            <h2>Sugerir Nova Quadra</h2>
+            <form id="quick-add-form">
+                <div class="form-group">
+                    <label>Nome da Quadra</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Esporte</label>
+                    <select>
+                        <option>Basquete</option>
+                        <option>Futebol</option>
+                        <option>Vôlei</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Sugerir</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Portal do Basquete. Todos os direitos reservados.</p>
-            <p>equações 1 e 2 grau</p>
+            <p>&copy; 2024 Original Sports. Performance e Estilo.</p>
         </div>
     </footer>
 
