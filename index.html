@@ -3,103 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Original Sports - Encontre sua Quadra</title>
+    <title>Meu Portfólio Profissional | Desenvolvedor</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
 </head>
 <body class="dark-mode">
     <header>
         <nav class="navbar">
-            <div class="logo">Original Sports</div>
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Buscar quadras, esportes...">
-            </div>
-            <div class="profile">
-                <div class="avatar">
-                    <img src="https://i.pravatar.cc/150?u=originalsports" alt="Perfil">
-                </div>
+            <div class="logo">Portfólio<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </div>
+                </label>
             </div>
         </nav>
     </header>
 
-    <div class="filter-dashboard">
-        <div class="chips-container">
-            <button class="chip active" data-filter="all">Todas</button>
-            <button class="chip" data-filter="basquete">🏀 Basquete</button>
-            <button class="chip" data-filter="futebol">⚽ Futebol</button>
-            <button class="chip" data-filter="volei">🏐 Vôlei</button>
-            <button class="chip" data-filter="proximas">📍 Próximas</button>
-            <button class="chip" data-filter="avaliadas">⭐ Melhor Avaliadas</button>
-        </div>
-    </div>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Transformando Ideias em <span>Código e Hardware</span></h1>
+                <p>Desenvolvedora Front-end Sênior especializada em criar experiências digitais modernas e integrar soluções de hardware inovadoras.</p>
+                <a href="#projetos" class="cta-button">Ver Projetos</a>
+            </div>
+        </section>
 
-    <main id="court-grid" class="court-grid">
-        <!-- Skeleton screens will be here initially -->
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-    </main>
+        <section id="sobre" class="about">
+            <div class="container">
+                <h2>Sobre Mim</h2>
+                <p>Com anos de experiência na indústria, foco em construir sistemas robustos e interfaces intuitivas que conectam o mundo físico ao digital.</p>
+            </div>
+        </section>
 
-    <button id="fab" class="fab">
-        <i class="fas fa-plus"></i>
-    </button>
-
-    <!-- Modal de Detalhes -->
-    <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-content glass">
-            <button class="close-modal">&times;</button>
-            <div class="modal-body">
-                <div class="gallery">
-                    <img id="modal-img" src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800" alt="Quadra">
-                </div>
-                <div class="details-info">
-                    <h2 id="modal-title">Arena Central</h2>
-                    <p id="modal-address">Rua dos Esportes, 123</p>
-                    <div class="modal-actions">
-                        <button class="btn btn-primary"><i class="fas fa-map-marker-alt"></i> Como Chegar</button>
-                        <button class="btn btn-secondary"><i class="fas fa-camera"></i> Adicionar Foto</button>
-                    </div>
-                    <div class="comments-section">
-                        <h3>Comentários</h3>
-                        <div class="chat-style">
-                            <div class="comment"><strong>João:</strong> Quadra excelente!</div>
-                            <div class="comment"><strong>Maria:</strong> Muito bem iluminada.</div>
+        <section id="projetos" class="projects">
+            <div class="container">
+                <h2>Projetos em Destaque</h2>
+                <div class="projects-grid">
+                    <!-- Exemplo de Card de Software -->
+                    <div class="project-card">
+                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500')"></div>
+                        <div class="project-info">
+                            <h3>Dashboard E-commerce</h3>
+                            <div class="tags">
+                                <span class="tag">JS</span>
+                                <span class="tag">React</span>
+                                <span class="tag">.NET</span>
+                            </div>
+                            <p>Uma plataforma completa para gestão de vendas em tempo real.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn-link"><i class="fab fa-github"></i> Repositório</a>
+                                <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
                         </div>
                     </div>
+                    <!-- Exemplo de Card de Hardware -->
+                    <div class="project-card">
+                        <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1553406830-ef2513450d76?w=500')"></div>
+                        <div class="project-info">
+                            <h3>Sistema IoT Agrícola</h3>
+                            <div class="tags">
+                                <span class="tag">Arduino</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">IoT</span>
+                            </div>
+                            <p>Monitoramento automatizado de umidade e temperatura via sensores.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn-link"><i class="fab fa-github"></i> Repositório</a>
+                                <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mais cards podem ser adicionados aqui -->
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Formulário Quick Add -->
-    <div id="quick-add-modal" class="modal-overlay">
-        <div class="modal-content glass small-modal">
-            <button class="close-modal">&times;</button>
-            <h2>Sugerir Nova Quadra</h2>
-            <form id="quick-add-form">
-                <div class="form-group">
-                    <label>Nome da Quadra</label>
-                    <input type="text" required>
+        <section id="habilidades" class="skills">
+            <div class="container">
+                <h2>Tech Stack</h2>
+                <div class="skills-grid">
+                    <div class="skill-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                    <div class="skill-item"><i class="fab fa-react"></i><span>React</span></div>
+                    <div class="skill-item"><i class="fab fa-microsoft"></i><span>.NET / C#</span></div>
+                    <div class="skill-item"><i class="fas fa-microchip"></i><span>Arduino</span></div>
+                    <div class="skill-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                    <div class="skill-item"><i class="fab fa-css3-alt"></i><span>CSS3 / Sass</span></div>
                 </div>
-                <div class="form-group">
-                    <label>Esporte</label>
-                    <select>
-                        <option>Basquete</option>
-                        <option>Futebol</option>
-                        <option>Vôlei</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Sugerir</button>
-            </form>
-        </div>
-    </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contact">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <p>Interessado em colaborar ou apenas quer bater um papo? Sinta-se à vontade para me enviar uma mensagem!</p>
+                <a href="mailto:contato@exemplo.com" class="cta-button">Enviar E-mail</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Original Sports. Performance e Estilo.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 Meu Portfólio Profissional. Todos os direitos reservados.</p>
         </div>
     </footer>
 
